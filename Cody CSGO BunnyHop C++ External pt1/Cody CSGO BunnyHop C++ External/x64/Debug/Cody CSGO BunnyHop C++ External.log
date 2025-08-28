@@ -1,0 +1,28 @@
+﻿  main.cpp
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(10,18): warning C4305: 'initializing': truncation from 'unsigned __int64' to 'DWORD'
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(10,18): warning C4309: 'initializing': truncation of constant value
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(11,16): warning C4305: 'initializing': truncation from 'unsigned __int64' to 'DWORD'
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(11,16): warning C4309: 'initializing': truncation of constant value
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(26,37): warning C4244: '=': conversion from 'uintptr_t' to 'DWORD', possible loss of data
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\MemMan.h(14,29): warning C4312: 'type cast': conversion from 'DWORD' to 'LPBYTE *' of greater size
+  (compiling source file 'main.cpp')
+      C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\MemMan.h(14,29):
+      the template instantiation context (the oldest one first) is
+          C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(28,29):
+          see reference to function template instantiation 'val MemMan::readMem<DWORD>(DWORD)' being compiled
+          with
+          [
+              val=DWORD
+          ]
+  
+C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\MemMan.h(20,30): warning C4312: 'type cast': conversion from 'DWORD' to 'LPBYTE *' of greater size
+  (compiling source file 'main.cpp')
+      C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\MemMan.h(20,30):
+      the template instantiation context (the oldest one first) is
+          C:\Users\Ryan\Desktop\Basic projects\Cody CSGO BunnyHop C++ External pt1\Cody CSGO BunnyHop C++ External\main.cpp(39,18):
+          see reference to function template instantiation 'val MemMan::writeMem<DWORD>(DWORD,val)' being compiled
+          with
+          [
+              val=DWORD
+          ]
+  

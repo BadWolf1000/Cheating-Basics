@@ -1,0 +1,4 @@
+﻿  Bhop Internal.cpp
+C:\Users\Ryan\Desktop\Basic projects\BunnyHop Internal\Bhop Internal.cpp(29,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryan\Desktop\Basic projects\BunnyHop Internal\Bhop Internal.cpp(36,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  BunnyHop Internal.vcxproj -> C:\Users\Ryan\Desktop\Basic projects\BunnyHop Internal\Debug\BunnyHop Internal.dll

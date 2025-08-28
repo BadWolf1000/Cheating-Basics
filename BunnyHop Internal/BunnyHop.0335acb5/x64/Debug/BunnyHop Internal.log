@@ -1,0 +1,2 @@
+﻿  Bhop Internal.cpp
+C:\Users\Ryan\Desktop\Basic projects\BunnyHop Internal\Bhop Internal.cpp(21,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
