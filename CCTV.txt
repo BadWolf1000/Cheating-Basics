@@ -1,0 +1,274 @@
+SetWorkingDir %A_ScriptDir%
+if not A_IsAdmin
+{
+Run *RunAs "%A_ScriptFullPath%"
+ExitApp
+}
+Gui, font, S8 CDefault Bold, Arial
+Gui, color, FFFFFF
+SetControlDelay, -1
+SetKeyDelay, -1
+SetMouseDelay, -1
+SetWinDelay, -1
+SetBatchLines, -1
+#NoEnv
+#KeyHistory 0
+ListLines, Off
+Gui, Add, CheckBox, x10 y10 w30 h30 vGlobal,
+Gui, Add, Text, x50 y10 w60 h30 , Global
+Gui, Add, Edit, x120 y10 w280 h25 vGlobalchat, Enemys are attacking
+Gui, Add, CheckBox, x10 y50 w30 h30 vTribe,
+Gui, Add, Text, x50 y50 w60 h30 , Tribe
+Gui, Add, Edit, x120 y50 w280 h25 vTribechat, Enemys are attacking
+Gui, Add, CheckBox, x10 y90 w30 h30 vDiscord,
+Gui, Add, Text, x50 y90 w60 h30 , Discord
+Gui, Add, Edit, x120 y90 w280 h25 vDiscordchat, Enemys are attacking
+Gui, Add, CheckBox, x10 y130 w30 h30 v1920x1080,
+Gui, Add, Text, x50 y130 w80 h30 , 1920 x 1080
+Gui, Add, CheckBox, x10 y170 w30 h30 v1920x1440,
+Gui, Add, Text, x50 y170 w80 h30 , 1920 x 1440
+Gui, Add, CheckBox, x10 y210 w30 h30 v2560x1440,
+Gui, Add, Text, x50 y210 w80 h30 , 2560 x 1440
+Gui, Add, Edit, x20 y250 w120 h25 vTo, Tribe
+Gui, Add, Text, x5 y290 w60 h20 , Repeat
+Gui, Add, Edit, x70 y290 w40 h25 vsecond, 5
+Gui, Add, Text, x115 y290 w30 h20, Mins
+Gui, Add, Button, Default x170 y330 w150 h40 gstart, Start
+Gui, Show, xcenter ycenter h400 w500, CCTV - ASA - badwolf1000 on discord
+#NoEnv
+#SingleInstance force
+Gui, 2:-Border +AlwaysOnTop -Caption +ToolWindow
+Gui, 2:font, s18 CDefault Bold,
+Gui, 2:Color, FFFFFF
+Gui, 2: +LastFound
+WinSet, TransColor, FFFFFF
+Gui, 2:Show,x0 y0 w155 h50, CCTV OFF
+Gui, 2:Add,Text,x5 y10 cRED vcctv,CCTV OFF
+Gui, 2:Submit, NoHide
+Gui, 3:-Border +AlwaysOnTop -Caption +ToolWindow
+Gui, 3:font, s18 CDefault Bold,
+Gui, 3:Color, FFFFFF
+Gui, 3: +LastFound
+WinSet, TransColor, FFFFFF
+Gui, 3:Show,x0 y0 w155 h50, CCTV ON
+Gui, 3:Add,Text,x5 y10 clime vcctv2, CCTV ON
+Gui, 3:Submit, NoHide
+Gui, 3:HIDE
+return
+save:
+Gui, Submit, NoHide
+return
+start:
+Gui, Submit, NoHide
+Gui, 2:Hide
+Gui, 3:Show
+Gui, Submit, NoHide
+timer := second*60000
+msgbox Repeat time %second% Min. Press "ok" button to start.
+WinActivate, ArkAscended
+if (2560x1440 = 1)
+{
+loop
+{
+ImageSearch,Px, Py, 230, 0, 840, 60, alert.PNG
+if (ErrorLevel=0)
+{
+blockInput, on
+if (Global = 1)
+{
+SendInput {Enter}
+Sleep, 500
+SendInput %Globalchat%
+Sleep, 1000
+SendInput {Enter}
+Sleep, 1000
+}
+if (Tribe = 1)
+{
+SendInput {Enter}
+Sleep, 1000
+SendInput %Tribechat%
+Sleep, 1000
+SendInput {Enter}
+Sleep, 1000
+}
+if (Discord = 1)
+{
+sleep,1000
+sendinput {Alt down}
+sleep,350
+sendinput {PrintScreen}
+sleep,350
+sendinput {Alt up}
+sleep,1000
+WinActivate, ahk_exe Discord.exe
+sleep 500
+Sendinput ^{v}
+sleep 1500
+Sendinput {enter}
+sleep 1000
+Sendinput %Discordchat% - next notification is %second% minutes
+sleep 1000
+Sendinput {enter}
+sleep 500
+Gui, Submit, NoHide
+Sleep 500
+Sendraw @%To%
+sleep 1000
+Sendinput {down}
+sleep 1000
+Sendinput {enter}
+sleep 1000
+Sendinput {enter}
+sleep 500
+WinMinimize, ahk_exe Discord.exe
+sleep,500
+}
+BlockInput, off
+WinActivate, ArkAscended
+BlockInput, off
+Sleep, %second%*60000
+return
+}
+}
+}
+else if (1920x1440 = 1)
+{
+loop
+{
+ImageSearch,Px, Py, 0, 0, 500, 80, alert.PNG
+if (ErrorLevel=0)
+{
+blockInput, on
+if (Global = 1)
+{
+SendInput {Enter}
+Sleep, 500
+SendInput %Globalchat%
+Sleep, 1000
+SendInput {Enter}
+Sleep, 1000
+}
+if (Tribe = 1)
+{
+SendInput {Enter}
+Sleep, 1000
+SendInput %Tribechat%
+Sleep, 1000
+SendInput {Enter}
+Sleep, 1000
+}
+if (Discord = 1)
+{
+sleep,1000
+sendinput {Alt down}
+sleep,350
+sendinput {PrintScreen}
+sleep,350
+sendinput {Alt up}
+sleep,1000
+WinActivate, ahk_exe Discord.exe
+sleep 500
+Sendinput ^{v}
+sleep 1500
+Sendinput {enter}
+sleep 1000
+Sendinput %Discordchat% - next notification is %second% minutes
+sleep 1000
+Sendinput {enter}
+sleep 500
+Gui, Submit, NoHide
+Sleep 500
+Sendraw @%To%
+sleep 1000
+Sendinput {down}
+sleep 1000
+Sendinput {enter}
+sleep 1000
+Sendinput {enter}
+sleep 500
+WinMinimize, ahk_exe Discord.exe
+sleep,500
+}
+}
+}
+}
+else if (1920x1080 = 1)
+{
+loop
+{
+ImageSearch,Px, Py, 180, 0, 620, 50, alert.PNG
+if (ErrorLevel=0)
+{
+blockInput, on
+if (Global = 1)
+{
+SendInput {Enter}
+Sleep, 500
+SendInput %Globalchat%
+Sleep, 1000
+SendInput {Enter}
+Sleep, 1000
+}
+if (Tribe = 1)
+{
+SendInput {Enter}
+Sleep, 1000
+SendInput %Tribechat%
+Sleep, 1000
+SendInput {Enter}
+Sleep, 1000
+}
+if (Discord = 1)
+{
+sleep,1000
+sendinput {Alt down}
+sleep,350
+sendinput {PrintScreen}
+sleep,350
+sendinput {Alt up}
+sleep,1000
+WinActivate, ahk_exe Discord.exe
+sleep 500
+Sendinput ^{v}
+sleep 1500
+Sendinput {enter}
+sleep 1000
+Sendinput %Discordchat% - next notification is %second% minutes
+sleep 1000
+Sendinput {enter}
+sleep 500
+Gui, Submit, NoHide
+Sleep 500
+Sendraw @%To%
+sleep 1000
+Sendinput {down}
+sleep 1000
+Sendinput {enter}
+sleep 1000
+Sendinput {enter}
+sleep 500
+WinMinimize, ahk_exe Discord.exe
+sleep,500
+}
+BlockInput, off
+WinActivate, ArkAscended
+BlockInput, off
+Sleep, %second%*60000
+return
+}
+}
+}
+Blockinput, off
+return
+guiclose:
+exitapp
+return
+f11::
+Gui, 3:Hide
+Gui, 2:Show
+reload
+return
+f12::
+exitapp
+return
